@@ -1,0 +1,7 @@
+{
+    "name": "website pages",
+    "userpages": ["index.php", "piste.php", "piloti.php", "team.php"],
+    "adminpages": ["insertNotizie.php", "insertTicketAbbonamenti"],
+    "loggedInPages": ["ticketAbbonamenti.php", "profilo.php"],
+    "DBPages": ["index.php, login.php, signup.php"]
+}
