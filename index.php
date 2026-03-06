@@ -1,12 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>f1</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Home</title>
+
+<link rel="stylesheet" href="styleHome.css">
+
 </head>
+
 <body>
-    <h1>F1</h1>
-    
+
+<div id="intro">
+    <img src="logo_f1-no_bg.png" id="logo">
+</div>
+
+
+
+<main id="content">
+
+<div class="hero">Benvenuto</div>
+
+<p>
+Homepage con animazione iniziale del logo.
+</p>
+
+</main>
+
+<script src="script.js"></script>
+
 </body>
 </html>
