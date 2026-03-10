@@ -8,6 +8,7 @@
 <title>Home</title>
 
 <link rel="stylesheet" href="styleHome.css">
+<link rel="stylesheet" href="headerUser.css">
 
 </head>
 
@@ -24,7 +25,7 @@
 <div class="hero">Benvenuto</div>
 
 <p>
-Homepage con animazione iniziale del logo.
+HOMEPAGE CON ANIMAZIONE INIZIALE DEL LOGO
 </p>
 
 </main>

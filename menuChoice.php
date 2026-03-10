@@ -15,7 +15,7 @@ $obj = json_decode($json);
 
 // in_array(el, arr) checks if el is in array arr
 if(in_array($pageName, $obj->loggedInPages)){
-    require 'header.php';
+    require 'headerLogged.php';
 }
 
 if(in_array($pageName, $obj->DBPages)){
