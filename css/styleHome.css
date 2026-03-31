@@ -1,12 +1,12 @@
 @font-face{
     font-family: "F1-Regular";
-    src: url("fonts/Formula1-Regular.ttf") format("truetype");
+    src: url("../fonts/Formula1-Regular.ttf") format("truetype");
     font-weight: normal;
 }
 
 @font-face{
     font-family: "F1-Bold";
-    src: url("fonts/Formula1-Bold.ttf") format("truetype");
+    src: url("../fonts/Formula1-Bold.ttf") format("truetype");
     font-weight: bold;
 }
 

@@ -1,3 +1,3 @@
-<If "%{REQUEST_URI} != '/XAMPP/htdocs/Informatica_5ie/index.php'">
-    php_value auto_prepend_file "/XAMPP/htdocs/Informatica_5ie/menuChoice.php"
+<If "%{REQUEST_URI} != '/XAMPP/htdocs/Informatica_5ie/php/index.php'">
+    php_value auto_prepend_file "/XAMPP/htdocs/Informatica_5ie/php/menuChoice.php"
 </If>

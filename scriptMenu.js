@@ -7,12 +7,11 @@ function click(){
     bool = !bool;
     console.log("jf")
     if(bool == true){
-        ul1.style.visibility="visible";
-        menuImage.src = ".user.png";
-        
-    }else{
-        ul1.style.visibility="hidden";
-        menuImage.src = ".user.png";
+        ul1.style.visibility = "visible";
+        imgReplace.src = "imgs/user.png";
+    } else{
+        ul1.style.visibility = "hidden";
+        imgReplace.src = "imgs/user.png";
     }
 
 }

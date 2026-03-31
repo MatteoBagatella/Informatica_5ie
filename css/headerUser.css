@@ -1,6 +1,6 @@
 @font-face{
     font-family: "F1-Bold";
-    src: url("fonts/Formula1-Bold.ttf") format("truetype");
+    src: url("../fonts/Formula1-Bold.ttf") format("truetype");
     font-weight: bold;
 }
 
@@ -99,7 +99,7 @@ nav#menu a:hover{
 #compareMenu{
     visibility: hidden;
     width: 130px;
-    background-color: rgb(255, 255, 255);
+    background-color: black;
     position: fixed;
     border: 0;
     padding-top:67.5px;
@@ -107,26 +107,25 @@ nav#menu a:hover{
     margin-left: 15px;
     height: 130px;
     left: 0;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border: 2px solid #ff200256;
 }
 
-#compareMenu ul li {
+
+#compareMenu ul li{
     display: flex;
     left: 0;
     clear: both;
-} 
-
-#compareMenu ul li{
     padding: 1px;
     font-size: 20px;
     margin-bottom: 20px;
-    border-bottom: 2px solid rgb(225, 0, 0);
-    border-right: 2px solid rgb(225, 0, 0);
-    border-bottom-right-radius: 10px;
+    border-bottom: 2px solid #ff1e02;
+    border-left: 2px solid #ff1e02;
+    border-bottom-left-radius: 10px;
 
     text-align: left;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: 650;
 }
 

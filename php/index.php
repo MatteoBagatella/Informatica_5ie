@@ -7,15 +7,15 @@
 
 <title>Home</title>
 
-<link rel="stylesheet" href="styleHome.css">
-<link rel="stylesheet" href="headerUser.css">
+<link rel="stylesheet" href="../css/styleHome.css">
+<link rel="stylesheet" href="../css/headerUser.css">
 
 </head>
 
 <body>
 
 <div id="intro">
-    <img src="logo_f1-no_bg.png" id="logo">
+    <img src="../imgs/logo_f1-no_bg.png" id="logo">
 </div>
 
 
@@ -30,7 +30,7 @@ HOMEPAGE CON ANIMAZIONE INIZIALE DEL LOGO
 
 </main>
 
-<script src="script.js"></script>
+<script src="../script.js"></script>
 
 </body>
 </html>
