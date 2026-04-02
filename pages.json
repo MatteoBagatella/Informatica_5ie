@@ -1,7 +1,7 @@
 {
     "name": "website pages",
-    "userpages": ["php/index.php"],
-    "adminpages": ["php/insertNotizie.php", "php/insertTicketAbbonamenti"],
-    "loggedInPages": ["php/ticketAbbonamenti.php", "php/profilo.php", "php/piste.php", "php/piloti.php", "php/team.php"],
-    "DBPages": ["php/index.php, php/login.php, php/signup.php"]
+    "userpages": ["index.php", "login.php", "signup.php"],
+    "adminpages": ["insertNotizie.php", "insertTicketAbbonamenti"],
+    "loggedInPages": ["ticketAbbonamenti.php", "profilo.php", "piste.php", "piloti.php", "team.php"],
+    "DBPages": ["index.php", "login.php", "signup.php"]
 }

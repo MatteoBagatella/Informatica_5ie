@@ -8,10 +8,10 @@ function click(){
     console.log("jf")
     if(bool == true){
         ul1.style.visibility = "visible";
-        imgReplace.src = "imgs/user.png";
+        imgReplace.src = "../imgs/userWhite.png";
     } else{
         ul1.style.visibility = "hidden";
-        imgReplace.src = "imgs/user.png";
+        imgReplace.src = "../imgs/user.png";
     }
 
 }

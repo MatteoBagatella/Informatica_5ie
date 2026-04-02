@@ -1,0 +1,119 @@
+@font-face{
+    font-family: "F1-Bold";
+    src: url("../fonts/Formula1-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'f1-bold';
+    background: linear-gradient(rgba(0, 0, 0, 0.852), rgba(0, 0, 0, 0.181)), url('../imgs/f1-Image.png'); 
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+  
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.scritta{
+    font-size: 14px;
+}
+
+/* BOX LOGIN */
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #0a0a0a;
+    padding: 40px;
+    border-radius: 15px;
+    width: 320px;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* linea racing */
+.login-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    background: red;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 35px;
+    color: red;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+/* INPUT */
+.input-group {
+    margin-bottom: 20px;
+}
+
+input {
+    font-family: "F1-Bold";
+    width: 100%;
+    padding: 12px;
+    border: none;
+    outline: none;
+    background: #1f1f1f;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+input:focus {
+    box-shadow: 0 0 10px red;
+}
+
+/* BOTTONE */
+button {
+    font-family: "f1-bold";
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: red;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+button:hover {
+    background: #cc0000;
+    transform: scale(1.03);
+}
+
+/* MESSAGGI */
+.success {
+    color: #00ff99;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.error {
+    color: #ff4d4d;
+    text-align: center;
+    margin-top: 15px;
+}

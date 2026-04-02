@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+
 
 
 <head>
@@ -19,8 +17,8 @@
     </div>
     <div id="compareMenu">
         <ul>
-            <li><a href="#"> SIGN UP</a></li>
-            <li><a href=""> LOGIN</a></li>
+            <li><a href="../php/signup.php"> SIGN UP</a></li>
+            <li><a href="../php/login.php"> LOGIN</a></li>
         
         </ul>
     </div>

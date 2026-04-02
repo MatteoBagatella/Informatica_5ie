@@ -19,7 +19,7 @@ if(in_array($pageName, $obj->loggedInPages)){
 }
 
 if(in_array($pageName, $obj->DBPages)){
-    require_once('DBHandler.php');
+    //require_once('DBHandler.php');
 }
 
 if(in_array($pageName, $obj->userpages)){
