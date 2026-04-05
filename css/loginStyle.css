@@ -25,7 +25,7 @@ body {
 }
 
 /* BOX LOGIN */
-.login-box {
+.box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,7 +39,7 @@ body {
 }
 
 /* linea racing */
-.login-box::before {
+.box::before {
     content: "";
     position: absolute;
     top: 0;
@@ -64,11 +64,6 @@ h2 {
     letter-spacing: 2px;
 }
 
-/* INPUT */
-.input-group {
-    margin-bottom: 20px;
-}
-
 input {
     font-family: "F1-Bold";
     width: 100%;
@@ -79,6 +74,7 @@ input {
     color: white;
     border-radius: 5px;
     transition: 0.3s;
+    margin-bottom: 20px;
 }
 
 input:focus {
@@ -117,3 +113,30 @@ button:hover {
     text-align: center;
     margin-top: 15px;
 }
+
+
+.input-date {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  
+  background: #1e1e1e; /* grigio scuro */
+  color: #ffffff;
+  
+  font-size: 14px;
+  font-family: inherit;
+
+  transition: all 0.2s ease;
+}
+
+
+/* Icona calendario (Chrome) */
+.input-date::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* rende l'icona chiara */
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+

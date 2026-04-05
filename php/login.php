@@ -12,13 +12,13 @@ session_start();
 
 <body>
 
-<div class="login-box">
+<div class="box">
     <div class="logo">LOGIN</div>
     <h4 class="scritta">INSERISCI LE TUE CREDENZIALI</h4>
 
     <form action="" method="POST">
         <div class="input-group">
-            <input type="text" name="username" placeholder="Username" required>
+            <input type="text" name="email" placeholder="Email" required>
         </div>
 
         <div class="input-group">
@@ -30,14 +30,14 @@ session_start();
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $user = $_POST["username"];
+        $email = $_POST["email"];
         $pass = $_POST["password"];
 
         // LOGIN DI TEST (da migliorare!)
-        if ($user === "admin" && $pass === "1234") {
-            echo "<p class='success'>Accesso riuscito</p>";
+        if ($email === "email@istituto.it" && $pass === "1234") {
+            echo "<p class='success'>ACCESSO RIESCIUTO</p>";
         } else {
-            echo "<p class='error'>Credenziali errate</p>";
+            echo "<p class='error'>CREDENZIALI ERRATE</p>";
         }
     }
     ?>
