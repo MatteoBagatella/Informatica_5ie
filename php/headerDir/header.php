@@ -1,6 +1,7 @@
 
 
 
+<html>
 <head>
 <link rel="stylesheet" href="../css/headerUser.css">
 </head>
@@ -29,3 +30,4 @@
     </header>
     <script src="../scriptMenu.js"></script>
 </body>
+</html>

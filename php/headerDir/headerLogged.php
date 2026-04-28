@@ -1,17 +1,32 @@
 <?php
-    session_start();
+if(isset($_POST['button'])){
+        session_unset();
+        session_destroy();
+        header("Location: index.php");
+    }
 ?>
-
-
-<link rel="stylesheet" href="css/styleHome.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleHome.css">
+    <title>Document</title>
+</head>
+<body>
 <header>
     
-<nav>
-<a href="index.php"><img src="../imgs/logo_f1-no_bg.png" id="logoUp"></a> 
-<a href="piste.php">PISTE</a>
-<a href="#">PILOTI</a>
-<a href="#">TEAM</a>
-<a href="#">TICKET & ABBONAMENTI</a>
-</nav>
+    <nav>
+    <a href="index.php"><img src="../imgs/logo_f1-no_bg.png" id="logoUp"></a> 
+    <a href="piste.php">PISTE</a>
+    <a href="#">PILOTI</a>
+    <a href="#">TEAM</a>
+    <a href="#">TICKET & ABBONAMENTI</a>
+    <button name="button" type="submit">Log out</button>
+        
+    </nav>
+    
+    </header>
 
-</header>
+</body>
+</html>

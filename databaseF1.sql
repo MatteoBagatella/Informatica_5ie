@@ -70,7 +70,7 @@ CREATE Table ticket(
     idTicket INT PRIMARY KEY AUTO_INCREMENT,
     nomePista VARCHAR(255) NOT NULL,
     prezzo DECIMAL(8,2) NOT NULL,
-    utenteId INT ,
+    utenteId INT,
     FOREIGN KEY (nomePista) REFERENCES pista(nomePista),
     FOREIGN KEY (utenteId) REFERENCES utente(utenteId)
 )

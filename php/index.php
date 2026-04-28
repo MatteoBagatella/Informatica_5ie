@@ -19,7 +19,6 @@
 </div>
 
 
-
 <main id="content">
 
 <div class="hero">Benvenuto</div>

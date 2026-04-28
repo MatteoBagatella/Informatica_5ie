@@ -12,7 +12,6 @@ $pageName = basename($_SERVER['PHP_SELF']);
 $obj = json_decode($json);
 
 
-
 // in_array(el, arr) checks if el is in array arr
 if(in_array($pageName, $obj->loggedInPages)){
     require 'headerDir/headerLogged.php';
@@ -23,7 +22,11 @@ if(in_array($pageName, $obj->DBPages)){
 }
 
 if(in_array($pageName, $obj->userpages)){
-    include 'headerDir/header.php';
+    if (isset($_SESSION['user_email'])) {
+        include 'headerDir/headerLogged.php';
+    } else {
+        include 'headerDir/header.php';
+    }
     // include ad.php;
 }elseif(in_array($pageName, $obj->adminpages)){
     include 'adminMenu.php';
