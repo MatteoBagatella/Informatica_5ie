@@ -1,4 +1,5 @@
 <?php
+
 // read pages.json into $json which is a string
 /*echo $_SERVER['PHP_SELF'];
 echo substr_count($_SERVER['PHP_SELF'], '/');

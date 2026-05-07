@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         $_SESSION['user_email'] = $email;
-        header("Location: index.php");
+        header("Location: notizie.php");
         exit();
     } else {
         echo "Errore nella registrazione. Riprova.";
@@ -38,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-<?php include 'headerDir/header.php'; ?>
 
 <div class="box">
     <div class="logo">SIGN UP</div>
@@ -62,6 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 
 </div>
+<script s></script>
 
 </body>
 </html>
