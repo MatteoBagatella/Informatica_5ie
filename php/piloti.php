@@ -1,7 +1,7 @@
 <?php
 require 'connect.php';
 
-$stmt = $conn->query("SELECT * FROM piloti");
+$stmt = $conn->query("SELECT * FROM pilota");
 $piloti = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -10,7 +10,7 @@ $piloti = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>F1 2026 Piloti</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleHome.css">
 </head>
 
 <body>
@@ -21,15 +21,15 @@ $piloti = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <?php foreach ($piloti as $p): ?>
 
-<a href="pilota.php?id=<?= $p['id'] ?>" class="card">
+<a href="pilota.php?id=<?= $p['numPilota'] ?>" class="card">
 
-    <img src="<?= htmlspecialchars($p['foto_pilota']) ?>" class="pilota">
+    <img src="<?= htmlspecialchars($p['fotoPilota']) ?>" class="pilota">
 
-    <img src="<?= htmlspecialchars($p['foto_team']) ?>" class="team">
+    <img src="<?= htmlspecialchars($p['logoTeam']) ?>" class="team">
 
-    <h2><?= htmlspecialchars($p['nome']) ?> <?= htmlspecialchars($p['cognome']) ?></h2>
+    <h2><?= htmlspecialchars($p['nomePilota']) ?> <?= htmlspecialchars($p['cognomePilota']) ?></h2>
 
-    <p>#<?= htmlspecialchars($p['numero']) ?></p>
+    <p>#<?= htmlspecialchars($p['numPilota']) ?></p>
 
 </a>
 
