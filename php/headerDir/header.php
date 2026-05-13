@@ -29,5 +29,9 @@
     
     </header>
     <script src="../scriptMenu.js"></script>
+
+    <footer style="position:fixed; bottom:16px; left:50%; transform:translateX(-50%); font-size:11px; letter-spacing:2px; text-transform:uppercase; opacity:0.4; z-index:999; color:#888888; font-family:sans-serif;">
+        Created by <span style="color:#888888; font-weight:bold;">Matteo Bagatella</span>
+    </footer>
 </body>
 </html>

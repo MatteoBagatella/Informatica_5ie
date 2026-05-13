@@ -19,8 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_regenerate_id(true);
         $_SESSION['user_email'] = $utente['email'];
 
-        header("Location: notizie.php");
-        exit();
+        // Controlla se è admin
+        if ($utente['email'] === 'admin@f1.com') {
+            $_SESSION['admin'] = true;
+            header("Location: adminPage.php");
+        } else {
+            header("Location: notizie.php");
+        }
     } else {
         $errore = "Credenziali errate";
     }
