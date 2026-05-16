@@ -61,14 +61,20 @@ nav a:hover {
     color: #e10600;
 }
 
+.titolo-wrap {
+    text-align: center;
+    padding-top: 90px;
+}
+
 h1 {
-    margin-top: 100px;
-    padding: 20px 30px;
+    display: inline-block;
     font-family: "F1-Bold";
     font-size: 28px;
     letter-spacing: 2px;
-    text-transform: uppercase;
-    text-align: center;
+    margin: 0 0 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e10600;
+    margin-top: 0;
 }
 
 /* 2 colonne */

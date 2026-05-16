@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    background: #0a0a0a;
+    color: white;
+    font-family: "F1-Regular";
+}
+
+.titolo-wrap {
+    text-align: center;
+    padding-top: 90px;
+}
+
+h1 {
+    display: inline-block;
+    font-family: "F1-Bold";
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin: 0 0 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e10600;
+    margin-top: 0;
+}
+
+/* ===== GRIGLIA ===== */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 40px 60px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* ===== CARD ===== */
+
+.card-pista {
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-pista:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+/* ===== IMMAGINE PISTA ===== */
+
+.pista-img {
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 160px;
+}
+
+.pista-img img {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+}
+
+/* ===== INFO ===== */
+
+.pista-info {
+    padding: 16px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-top: 2px solid #e10600;
+}
+
+.pista-nazione {
+    font-family: "F1-Regular";
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.5;
+    margin: 0;
+}
+
+.pista-info h2 {
+    font-family: "F1-Bold";
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.pista-stats {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.pista-stats span {
+    font-family: "F1-Regular";
+    font-size: 11px;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

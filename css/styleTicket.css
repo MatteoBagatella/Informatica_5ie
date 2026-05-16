@@ -1,0 +1,195 @@
+main {
+    max-width: 1000px;
+    margin: 100px auto 60px;
+    padding: 0 30px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sezione-titolo { text-align: center; }
+
+h1 {
+    display: inline-block;
+    font-family: "F1-Bold";
+    font-size: 26px;
+    letter-spacing: 2px;
+    margin: 20px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e10600;
+    margin-top: 0;
+}
+
+/* ===== DUE COLONNE TICKET ===== */
+
+.due-colonne {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.blocco-scuro {
+    background: #111;
+    border-radius: 10px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.blocco-scuro h3 {
+    font-family: "F1-Bold";
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #e10600;
+    margin: 0;
+}
+
+select {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: white;
+    font-family: "F1-Regular";
+    font-size: 13px;
+    padding: 10px 14px;
+    outline: none;
+    width: 100%;
+}
+
+select:focus { border-color: #e10600; }
+
+.btn-rosso {
+    font-family: "F1-Bold";
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: #e10600;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+
+.btn-rosso:hover { background: #a80000; }
+
+/* ===== RIGHE TICKET ===== */
+
+.riga-ticket {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #1a1a1a;
+    font-size: 13px;
+    gap: 10px;
+}
+
+.riga-ticket span:first-child {
+    flex: 1;
+    font-family: "F1-Regular";
+    opacity: 0.8;
+}
+
+.riga-ticket span:nth-child(2) {
+    font-family: "F1-Bold";
+    font-size: 14px;
+}
+
+.btn-elimina {
+    background: transparent;
+    border: 1px solid #333;
+    color: #e10600;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: border-color 0.2s;
+}
+
+.btn-elimina:hover { border-color: #e10600; }
+
+.vuoto {
+    font-size: 12px;
+    opacity: 0.3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== ABBONAMENTI ===== */
+
+.abbonamenti-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.abb-card {
+    background: #111;
+    border-radius: 10px;
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.abb-card.attivo {
+    border-color: #e10600;
+}
+
+.abb-card h3 {
+    font-family: "F1-Bold";
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.abb-piste {
+    font-family: "F1-Regular";
+    font-size: 12px;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.badge-attivo {
+    font-family: "F1-Bold";
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #e10600;
+}
+
+.btn-elimina-abb {
+    font-family: "F1-Bold";
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: transparent;
+    color: white;
+    border: 1px solid #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.btn-elimina-abb:hover { border-color: white; }
+
+.disabilitato {
+    font-family: "F1-Regular";
+    font-size: 10px;
+    opacity: 0.25;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

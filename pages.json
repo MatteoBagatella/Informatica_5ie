@@ -2,7 +2,7 @@
 {
     "name": "website pages",
     "userpages": ["index.php", "login.php", "signup.php"],
-    "adminpages": ["insertNotizie.php", "insertTicketAbbonamenti"],
-    "loggedInPages": ["ticketAbbonamenti.php", "profilo.php", "piste.php", "piloti.php", "teams.php", "notizie.php"],
+    "adminpages": ["adminPage.php"],
+    "loggedInPages": ["ticketAbbonamenti.php", "profilo.php", "piste.php", "piloti.php", "teams.php", "notizie.php", "areaPersonale.php", "fanClub.php", "pista.php"],
     "DBPages": ["index.php", "login.php", "signup.php"]
 }

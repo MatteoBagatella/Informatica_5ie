@@ -28,7 +28,9 @@ $teamColors = [
 </head>
 <body>
 
-<h1>Team UFFICIALI 2026</h1>
+<div class="titolo-wrap">
+    <h1>TEAM UFFICIALI 2026</h1>
+</div>
 
 <div class="grid">
     <?php foreach ($teams as $t):

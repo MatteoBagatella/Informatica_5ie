@@ -36,8 +36,9 @@ $teamNames = [
 </head>
 
 <body>
-
-<h1>Piloti ufficiali del 2026</h1>
+<div class="titolo-wrap">
+    <h1>PILOTI UFFICIALI 2026</h1>
+</div>
 
 <div class="grid">
 

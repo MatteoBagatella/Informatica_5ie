@@ -10,8 +10,8 @@ CREATE Table utente(
     idAbbonamento INT,
     nomeFanClub VARCHAR(255),
     email VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
-
+    password VARCHAR(255) NOT NULL,
+    Foreign Key (idAbbonamento) REFERENCES abbonamento(idAbbonamento)
 )
 
 
@@ -65,6 +65,8 @@ CREATE Table fanClub(
     nomeFanClub VARCHAR(255) PRIMARY KEY,
     idTeam INT NOT NULL,
     membri INT NOT NULL,
+    descrizione VARCHAR(1000) NOT NULL,
+    imgTeam VARCHAR(10000) NOT NULL,
     FOREIGN KEY (idTeam) REFERENCES team(idTeam)
 )
 
@@ -72,9 +74,9 @@ CREATE Table ticket(
     idTicket INT PRIMARY KEY AUTO_INCREMENT,
     nomePista VARCHAR(255) NOT NULL,
     prezzo DECIMAL(8,2) NOT NULL,
-    utenteId INT,
+    utenteId INT NOT NULL,
     FOREIGN KEY (nomePista) REFERENCES pista(nomePista),
-    FOREIGN KEY (utenteId) REFERENCES utente(utenteId)
+    FOREIGN KEY (utenteId) REFERENCES utente(utenteId) ON DELETE SET NULL
 )
 
 CREATE Table notizia(
@@ -89,9 +91,12 @@ ALTER TABLE team ADD fotoMacchina VARCHAR(10000) NOT NULL;
 ALTER TABLE pilota ADD logoTeam VARCHAR(1000) NOT NULL;
 ALTER TABLE team ADD logoTeam VARCHAR(1000) NOT NULL;
 
-drop table pilota;
-drop table fanclub;
-DROP TABLE team;
+ALTER TABLE utente ADD FOREIGN KEY (nomeFanClub) REFERENCES fanClub(nomeFanClub) ON DELETE SET NULL;
+
+alter table pista add prezzoBiglietto DECIMAL(8,2) NOT NULL;
+ALTER TABLE pista ADD imgPista VARCHAR(10000) NOT NULL DEFAULT '';
+
+
 
 
 
@@ -243,3 +248,75 @@ INSERT INTO pilota (numPilota, idTeam, nomePilota, cognomePilota, dataNascitaPil
   UPDATE pilota SET fotoPilota = 'https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/d_common:f1:2026:fallback:driver:2026fallbackdriverright.webp/v1740000001/common/f1/2026/mercedes/andant01/2026mercedesandant01right.webp' WHERE numPilota = 12;
   UPDATE pilota SET fotoPilota = 'https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/d_common:f1:2026:fallback:driver:2026fallbackdriverright.webp/v1740000001/common/f1/2026/mercedes/georus01/2026mercedesgeorus01right.webp' WHERE numPilota = 63;
   
+
+
+  INSERT INTO fanClub (nomeFanClub, idTeam, membri, descrizione, imgTeam) VALUES
+('McLaren Fan Club', 1, 15420, 'Il fan club ufficiale della McLaren, il team più vincente degli anni 80 e 90. Unisciti alla famiglia papaya!', 'https://media.formula1.com/image/upload/c_lfill,w_48/q_auto/v1740000001/common/f1/2026/mclaren/2026mclarenlogowhite.webp'),
+('Ferrari Fan Club', 2, 48300, 'La Scuderia Ferrari è il team più titolato della storia della Formula 1. Forza Ferrari!', 'https://media.formula1.com/image/upload/c_lfill,w_48/q_auto/v1740000001/common/f1/2026/ferrari/2026ferrarilogowhite.webp'),
+('Mercedes Fan Club', 3, 22100, 'Il fan club della stella d\'argento, dominatore dell\'era ibrida con 8 titoli costruttori consecutivi.', 'https://media.formula1.com/image/upload/c_lfill,w_48/q_auto/v1740000001/common/f1/2026/mercedes/2026mercedeslogowhite.webp'),
+('Red Bull Fan Club', 4, 31500, 'Il fan club del team energizzante. Quattro titoli costruttori e il dominatore della scena moderna.', 'https://media.formula1.com/image/upload/c_lfill,w_48/q_auto/v1740000001/common/f1/2026/redbullracing/2026redbullracinglogowhite.webp'),
+('Aston Martin Fan Club', 5, 8700, 'Il fan club del team britannico di lusso, con Fernando Alonso come punto di riferimento.', 'https://media.formula1.com/image/upload/c_lfill,w_48/q_auto/v1740000001/common/f1/2026/astonmartin/2026astonmartinlogowhite.webp'),
+('Alpine Fan Club', 6, 9200, 'Il fan club del team francese, erede della gloriosa tradizione Renault in Formula 1.', 'https://media.formula1.com/image/upload/c_lfill,w_48/q_auto/v1740000001/common/f1/2026/alpine/2026alpinelogowhite.webp'),
+('Haas Fan Club', 7, 5100, 'Il fan club del team americano, l\'ultimo debuttante storico della griglia prima di Audi e Cadillac.', 'https://media.formula1.com/image/upload/c_lfill,w_48/q_auto/v1740000001/common/f1/2026/haas/2026haaslogowhite.webp'),
+('Williams Fan Club', 8, 12800, 'Il fan club del team più vincente degli anni 90 insieme alla McLaren. Una storia leggendaria.', 'https://media.formula1.com/image/upload/c_lfill,w_48/q_auto/v1740000001/common/f1/2026/williams/2026williamslogowhite.webp'),
+('Audi Fan Club', 9, 6300, 'Il fan club del nuovo team Audi, debuttante nella stagione 2026. Una nuova era inizia!', 'https://media.formula1.com/image/upload/c_lfill,w_48/q_auto/v1740000001/common/f1/2026/audi/2026audilogowhite.webp'),
+('Racing Bulls Fan Club', 10, 7400, 'Il fan club del team satellite Red Bull, fucina di talenti per la Formula 1 del futuro.', 'https://media.formula1.com/image/upload/c_lfill,w_48/q_auto/v1740000001/common/f1/2026/racingbulls/2026racingbullslogowhite.webp'),
+('Cadillac Fan Club', 11, 4800, 'Il fan club del team americano Cadillac, il secondo debuttante della stagione 2026.', 'https://media.formula1.com/image/upload/c_lfill,w_48/q_auto/v1740000001/common/f1/2026/cadillac/2026cadillaclogowhite.webp');
+
+INSERT INTO abbonamento (tipo, numPiste) VALUES
+('Base', 3),
+('Mid', 6),
+('Plus', 9),
+('Premium', 11);
+
+INSERT INTO pista (nomePista, nazione, lunghezza, nCurve, giri, recordPista, annoPrimoGP, prezzoBiglietto) VALUES
+('Bahrain International Circuit', 'Bahrain', 5412, 15, 57, '1:31.447', 2004, 150.00),
+('Jeddah Corniche Circuit', 'Arabia Saudita', 6174, 27, 50, '1:30.734', 2021, 180.00),
+('Albert Park Circuit', 'Australia', 5278, 16, 58, '1:20.235', 1996, 160.00),
+('Suzuka Circuit', 'Giappone', 5807, 18, 53, '1:30.983', 1987, 170.00),
+('Shanghai International Circuit', 'Cina', 5451, 16, 56, '1:32.238', 2004, 155.00),
+('Miami International Autodrome', 'USA', 5412, 19, 57, '1:29.708', 2022, 200.00),
+('Autodromo Enzo e Dino Ferrari', 'Italia', 4909, 19, 63, '1:15.484', 1980, 140.00),
+('Circuit de Monaco', 'Monaco', 3337, 19, 78, '1:12.909', 1950, 250.00),
+('Circuit Gilles Villeneuve', 'Canada', 4361, 14, 70, '1:13.078', 1978, 165.00),
+('Circuit de Barcelona-Catalunya', 'Spagna', 4657, 16, 66, '1:16.330', 1991, 145.00),
+('Red Bull Ring', 'Austria', 4318, 10, 71, '1:05.619', 1970, 140.00),
+('Silverstone Circuit', 'Regno Unito', 5891, 18, 52, '1:27.097', 1950, 175.00),
+('Hungaroring', 'Ungheria', 4381, 14, 70, '1:16.627', 1986, 135.00),
+('Circuit de Spa-Francorchamps', 'Belgio', 7004, 19, 44, '1:46.286', 1950, 190.00),
+('Circuit Zandvoort', 'Paesi Bassi', 4259, 14, 72, '1:11.097', 1952, 160.00),
+('Autodromo Nazionale Monza', 'Italia', 5793, 11, 53, '1:21.046', 1950, 155.00),
+('Baku City Circuit', 'Azerbaigian', 6003, 20, 51, '1:43.009', 2016, 170.00),
+('Marina Bay Street Circuit', 'Singapore', 4940, 23, 62, '1:35.867', 2008, 185.00),
+('Circuit of the Americas', 'USA', 5513, 20, 56, '1:36.169', 2012, 195.00),
+('Autodromo Hermanos Rodriguez', 'Messico', 4304, 17, 71, '1:17.774', 1963, 150.00),
+('Autodromo Jose Carlos Pace', 'Brasile', 4309, 15, 71, '1:10.540', 1973, 145.00),
+('Las Vegas Strip Circuit', 'USA', 6201, 17, 50, '1:35.490', 2023, 220.00),
+('Losail International Circuit', 'Qatar', 5380, 16, 57, '1:24.319', 2021, 160.00),
+('Yas Marina Circuit', 'UAE', 5281, 16, 58, '1:26.103', 2009, 175.00);
+
+
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Bahrain International Circuit';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Saudi%20Arabia%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Jeddah Corniche Circuit';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Australia%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Albert Park Circuit';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Japan%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Suzuka Circuit';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/China%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Shanghai International Circuit';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Miami%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Miami International Autodrome';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Emilia%20Romagna%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Autodromo Enzo e Dino Ferrari';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Monaco%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Circuit de Monaco';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Canada%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Circuit Gilles Villeneuve';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Spain%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Circuit de Barcelona-Catalunya';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Austria%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Red Bull Ring';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Great%20Britain%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Silverstone Circuit';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Hungary%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Hungaroring';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Belgium%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Circuit de Spa-Francorchamps';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Netherlands%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Circuit Zandvoort';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Italy%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Autodromo Nazionale Monza';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Azerbaijan%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Baku City Circuit';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Singapore%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Marina Bay Street Circuit';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/USA%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Circuit of the Americas';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Mexico%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Autodromo Hermanos Rodriguez';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Brazil%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Autodromo Jose Carlos Pace';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Las%20Vegas%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Las Vegas Strip Circuit';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Qatar%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Losail International Circuit';
+UPDATE pista SET imgPista = 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Abu%20Dhabi%20carbon.png.transform/2col/image.png' WHERE nomePista = 'Yas Marina Circuit';

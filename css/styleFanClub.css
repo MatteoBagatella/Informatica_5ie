@@ -1,0 +1,173 @@
+main {
+    max-width: 900px;
+    margin: 100px auto 60px;
+    padding: 0 30px;
+    opacity: 1;
+}
+
+.titolo-wrap { text-align: center; }
+
+h1 {
+    display: inline-block;
+    font-family: "F1-Bold";
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin: 0 0 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e10600;
+    text-align: left;
+    margin-top: 0;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ===== CARD ===== */
+
+.fc-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border-radius: 10px;
+    padding: 20px 24px;
+    transition: transform 0.2s;
+}
+
+.fc-card:hover { transform: translateX(4px); }
+
+/* ===== LOGO ===== */
+
+.fc-logo {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.fc-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ===== INFO ===== */
+
+.fc-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.fc-team {
+    font-family: "F1-Regular";
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    margin: 0;
+}
+
+.fc-info h2 {
+    font-family: "F1-Bold";
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.fc-desc {
+    font-family: "F1-Regular";
+    font-size: 13px;
+    opacity: 0.7;
+    margin: 4px 0 0;
+    line-height: 1.5;
+}
+
+.fc-membri {
+    font-family: "F1-Bold";
+    font-size: 12px;
+    opacity: 0.6;
+    margin: 6px 0 0;
+}
+
+/* ===== AZIONE ===== */
+
+.fc-azione {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-iscriviti {
+    font-family: "F1-Bold";
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: white;
+    color: #0a0a0a;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-iscriviti:hover { opacity: 0.8; }
+
+.btn-lascia {
+    font-family: "F1-Bold";
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.btn-lascia:hover { border-color: white; }
+
+.badge-iscritto {
+    font-family: "F1-Bold";
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: white;
+    opacity: 0.9;
+}
+
+.btn-disabilitato {
+    font-family: "F1-Regular";
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.3;
+    text-align: center;
+}
+
+/* ===== COLORI TEAM ===== */
+
+.team-mclaren               { background-color: #FF8000; }
+.team-ferrari               { background-color: #E8002D; }
+.team-mercedes              { background-color: #4db8a6; }
+.team-redbull               { background-color: #3671C6; }
+.team-astonmartin           { background-color: #358C75; }
+.team-alpine                { background-color: #FF87BC; }
+.team-haas                  { background-color: #B6BABD; }
+.team-williams              { background-color: #64C4FF; }
+.team-audi                  { background-color: #791600; }
+.team-racingbulls           { background-color: #6692FF; }
+.team-cadillac              { background-color: #333333; }
+.team-default               { background-color: #1e1e1e; }
